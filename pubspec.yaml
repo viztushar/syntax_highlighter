@@ -1,8 +1,8 @@
 name: syntax_highlighter
 description: syntax highlighter  for show your code in the app
 version: 0.0.1
-author:
-homepage:
+author: Tushar Parmar <viztushar@gmail.com>
+homepage: https://github.com/viztushar/syntax_highlighter
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
