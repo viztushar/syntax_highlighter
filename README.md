@@ -4,7 +4,8 @@ syntax highlighter for show your code in the app
 
 # How to Use It
 
-###step 2
+### Step 2
+
 add your code in your file
 
 ```
@@ -12,7 +13,7 @@ String _exampleCode =
       "class MyHomePage extends StatefulWidget { MyHomePage({Key key, this.title}) : super(key: key); final String title; @override _MyHomePageState createState() => _MyHomePageState();}";
 ```
 
-###step 2
+### Step 2
 
 add `SyntaxHighlighterStyle` in your `build` method
 
@@ -23,7 +24,7 @@ final SyntaxHighlighterStyle style =
             : SyntaxHighlighterStyle.lightThemeStyle();
 ```
 
-###step 3
+### Step 3
 
 add this code
 
