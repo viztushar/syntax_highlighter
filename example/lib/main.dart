@@ -26,32 +26,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  String _exampleCode = "class MyHomePage extends StatefulWidget { MyHomePage({Key key, this.title}) : super(key: key); final String title; @override _MyHomePageState createState() => _MyHomePageState();}";
+  String _exampleCode =
+      "class MyHomePage extends StatefulWidget { MyHomePage({Key key, this.title}) : super(key: key); final String title; @override _MyHomePageState createState() => _MyHomePageState();}";
 
   @override
   Widget build(BuildContext context) {
     final SyntaxHighlighterStyle style =
-    Theme.of(context).brightness == Brightness.dark
-        ? SyntaxHighlighterStyle.darkThemeStyle()
-        : SyntaxHighlighterStyle.lightThemeStyle();
-   return Scaffold(
-      appBar: AppBar(
-       title: Text(widget.title),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: RichText(
-            text: TextSpan(
-              style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
-              children: <TextSpan>[
-                DartSyntaxHighlighter(style).format(_exampleCode),
-              ],
+        Theme.of(context).brightness == Brightness.dark
+            ? SyntaxHighlighterStyle.darkThemeStyle()
+            : SyntaxHighlighterStyle.lightThemeStyle();
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: RichText(
+              text: TextSpan(
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
+                children: <TextSpan>[
+                  DartSyntaxHighlighter(style).format(_exampleCode),
+                ],
+              ),
             ),
           ),
-        ),
-      )
-    );
+        ));
   }
 }
