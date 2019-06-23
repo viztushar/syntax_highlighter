@@ -8,7 +8,7 @@ syntax highlighter for show your code in the app
 
 add your code in your file
 
-```
+```javascript
 String _exampleCode =
       "class MyHomePage extends StatefulWidget { MyHomePage({Key key, this.title}) : super(key: key); final String title; @override _MyHomePageState createState() => _MyHomePageState();}";
 ```
@@ -17,7 +17,7 @@ String _exampleCode =
 
 add `SyntaxHighlighterStyle` in your `build` method
 
-```
+```javascript
 final SyntaxHighlighterStyle style =
         Theme.of(context).brightness == Brightness.dark
             ? SyntaxHighlighterStyle.darkThemeStyle()
@@ -28,7 +28,7 @@ final SyntaxHighlighterStyle style =
 
 add this code
 
-```
+```javascript
             RichText(
               text: TextSpan(
                 style: const TextStyle(fontFamily: 'monospace', fontSize: 10.0),
@@ -42,7 +42,7 @@ add this code
 
 check Full Example code in [example/lib/main.dart](https://github.com/viztushar/syntax_highlighter/blob/master/example/lib/main.dart)
 
-```
+```javascript
 import 'package:flutter/material.dart';
 import 'package:syntax_highlighter/syntax_highlighter.dart';
 
@@ -101,14 +101,3 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 ```
-
-## Getting Started
-
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
