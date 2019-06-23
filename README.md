@@ -38,7 +38,7 @@ add this code
 
 # Full code
 
-check full code in [example/lib/main.dart]()
+check full code in [example/lib/main.dart]('https://github.com/viztushar/syntax_highlighter/blob/master/example/lib/main.dart')
 
 ```
 import 'package:flutter/material.dart';
