@@ -4,6 +4,7 @@ syntax highlighter for show your code in the app
 
 # How to Use It
 
+###step 2
 add your code in your file
 
 ```
@@ -11,7 +12,7 @@ String _exampleCode =
       "class MyHomePage extends StatefulWidget { MyHomePage({Key key, this.title}) : super(key: key); final String title; @override _MyHomePageState createState() => _MyHomePageState();}";
 ```
 
-step 2
+###step 2
 
 add `SyntaxHighlighterStyle` in your `build` method
 
@@ -22,7 +23,7 @@ final SyntaxHighlighterStyle style =
             : SyntaxHighlighterStyle.lightThemeStyle();
 ```
 
-step 3
+###step 3
 
 add this code
 
@@ -36,9 +37,9 @@ add this code
               ),
 ```
 
-# Full code
+# Full Example
 
-check full code in (example/lib/main.dart)['https://github.com/viztushar/syntax_highlighter/blob/master/example/lib/main.dart']
+check Full Example code in [example/lib/main.dart](https://github.com/viztushar/syntax_highlighter/blob/master/example/lib/main.dart)
 
 ```
 import 'package:flutter/material.dart';
