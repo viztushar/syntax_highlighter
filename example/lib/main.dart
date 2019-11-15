@@ -33,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final SyntaxHighlighterStyle style =
         Theme.of(context).brightness == Brightness.dark
-            ? SyntaxHighlighterStyle.darkThemeStyle()
-            : SyntaxHighlighterStyle.lightThemeStyle();
+            ? SyntaxHighlighterStyle.darkThemeStyle
+            : SyntaxHighlighterStyle.lightThemeStyle;
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
