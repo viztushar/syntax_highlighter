@@ -17,31 +17,27 @@ class SyntaxHighlighterStyle {
     this.constantStyle,
   });
 
-  static SyntaxHighlighterStyle lightThemeStyle() {
-    return SyntaxHighlighterStyle(
-      baseStyle: const TextStyle(color: Color(0xFF000000)),
-      numberStyle: const TextStyle(color: Color(0xFF1565C0)),
-      commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
-      keywordStyle: const TextStyle(color: Color(0xFF9C27B0)),
-      stringStyle: const TextStyle(color: Color(0xFF43A047)),
-      punctuationStyle: const TextStyle(color: Color(0xFF000000)),
-      classStyle: const TextStyle(color: Color(0xFF512DA8)),
-      constantStyle: const TextStyle(color: Color(0xFF795548)),
-    );
-  }
+  static SyntaxHighlighterStyle get lightThemeStyle => SyntaxHighlighterStyle(
+        baseStyle: const TextStyle(color: Color(0xFF000000)),
+        numberStyle: const TextStyle(color: Color(0xFF1565C0)),
+        commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
+        keywordStyle: const TextStyle(color: Color(0xFF9C27B0)),
+        stringStyle: const TextStyle(color: Color(0xFF43A047)),
+        punctuationStyle: const TextStyle(color: Color(0xFF000000)),
+        classStyle: const TextStyle(color: Color(0xFF512DA8)),
+        constantStyle: const TextStyle(color: Color(0xFF795548)),
+      );
 
-  static SyntaxHighlighterStyle darkThemeStyle() {
-    return SyntaxHighlighterStyle(
-      baseStyle: const TextStyle(color: Color(0xFFFFFFFF)),
-      numberStyle: const TextStyle(color: Color(0xFF1565C0)),
-      commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
-      keywordStyle: const TextStyle(color: Color(0xFF80CBC4)),
-      stringStyle: const TextStyle(color: Color(0xFF009688)),
-      punctuationStyle: const TextStyle(color: Color(0xFFFFFFFF)),
-      classStyle: const TextStyle(color: Color(0xFF009688)),
-      constantStyle: const TextStyle(color: Color(0xFF795548)),
-    );
-  }
+  static SyntaxHighlighterStyle get darkThemeStyle => SyntaxHighlighterStyle(
+        baseStyle: const TextStyle(color: Color(0xFFFFFFFF)),
+        numberStyle: const TextStyle(color: Color(0xFF1565C0)),
+        commentStyle: const TextStyle(color: Color(0xFF9E9E9E)),
+        keywordStyle: const TextStyle(color: Color(0xFF80CBC4)),
+        stringStyle: const TextStyle(color: Color(0xFF009688)),
+        punctuationStyle: const TextStyle(color: Color(0xFFFFFFFF)),
+        classStyle: const TextStyle(color: Color(0xFF009688)),
+        constantStyle: const TextStyle(color: Color(0xFF795548)),
+      );
 
   final TextStyle baseStyle;
   final TextStyle numberStyle;
@@ -51,6 +47,28 @@ class SyntaxHighlighterStyle {
   final TextStyle punctuationStyle;
   final TextStyle classStyle;
   final TextStyle constantStyle;
+
+  SyntaxHighlighterStyle copyWith({
+    TextStyle baseStyle,
+    TextStyle numberStyle,
+    TextStyle commentStyle,
+    TextStyle keywordStyle,
+    TextStyle stringStyle,
+    TextStyle punctuationStyle,
+    TextStyle classStyle,
+    TextStyle constantStyle,
+  }) {
+    return SyntaxHighlighterStyle(
+      baseStyle: baseStyle ?? this.baseStyle,
+      numberStyle: numberStyle ?? this.numberStyle,
+      commentStyle: commentStyle ?? this.commentStyle,
+      keywordStyle: keywordStyle ?? this.keywordStyle,
+      stringStyle: stringStyle ?? this.stringStyle,
+      punctuationStyle: punctuationStyle ?? this.punctuationStyle,
+      classStyle: classStyle ?? this.classStyle,
+      constantStyle: constantStyle ?? this.constantStyle,
+    );
+  }
 }
 
 abstract class SyntaxHighlighter {
@@ -60,7 +78,7 @@ abstract class SyntaxHighlighter {
 class DartSyntaxHighlighter extends SyntaxHighlighter {
   DartSyntaxHighlighter([this._style]) {
     _spans = <_HighlightSpan>[];
-    _style ??= SyntaxHighlighterStyle.darkThemeStyle();
+    _style ??= SyntaxHighlighterStyle.darkThemeStyle;
   }
 
   SyntaxHighlighterStyle _style;
